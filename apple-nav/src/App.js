@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navigation from './components/Navigation';
+import { NavWrapper, TopNav } from './components/Navigation';
+
+const links = [
+  "Mac",
+  "iPad",
+  "iPhone",
+  "Watch",
+  "TV",
+  "Music",
+  "Support",
+];
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navigation />
+        <NavWrapper>
+          <TopNav links={links}/>
+        </NavWrapper>
         <h1>Apple</h1>
       </div>
     );
