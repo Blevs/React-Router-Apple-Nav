@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Route } from 'react-router-dom';
 import { NavWrapper, TopNav, SubNav } from './components/Navigation';
 import { subNavItems } from './scenes/Mac';
 
@@ -19,11 +20,8 @@ class App extends Component {
       <div className="App">
         <NavWrapper>
           <TopNav links={links}/>
-          <SubNav
-            items={subNavItems}
-            display="dark"
-            /* items={[{icon: <span>ICON</span>, text: "icon", link: "icon"}]} */
-          />
+          <Route path="/mac/" render={(props) => <SubNav {...props} items={subNavItems} />}/>
+          <Route path="/ipad/" render={(props) => <SubNav {...props} items={subNavItems} display="dark"/>}/>
         </NavWrapper>
         <h1>Apple</h1>
       </div>

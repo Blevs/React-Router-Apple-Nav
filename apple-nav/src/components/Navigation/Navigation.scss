@@ -51,6 +51,7 @@
       width: 100%;
       max-width: 700px;
       margin: 0 auto;
+      animation: slidein 0.5s;
       .subnav-item {
         transition: color 0.3s;
         display: flex;
@@ -66,5 +67,16 @@
         }
       }
     }
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
