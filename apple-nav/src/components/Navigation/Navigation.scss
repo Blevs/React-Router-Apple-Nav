@@ -3,12 +3,11 @@
   width: 100%;
   border-top: 3px solid #fff;
   text-align: center;
-  padding: 15px 0;
-  nav {
+  .topnav {
     width: 100%;
     max-width: 800px;
     box-sizing: border-box;
-    padding: 0 15px;
+    padding: 15px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -19,6 +18,22 @@
       &:hover {
         color: lightgrey;
       }
+      &:link {
+        text-decoration: none;
+      }
+    }
+  }
+  .subnav {
+    background: #2d2d2d;
+    padding: 15px;
+    .subnav-item {
+      transition: color 0.3s;
+      &.active {
+        color: grey;
+      }
+    }
+    a {
+      color: #fff;
       &:link {
         text-decoration: none;
       }

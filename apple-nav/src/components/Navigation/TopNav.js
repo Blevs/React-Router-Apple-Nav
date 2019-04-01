@@ -4,9 +4,9 @@ import './Navigation.scss';
 
 const TopNav = ({links}) => {
   return (
-    <nav>
+    <nav className="topnav">
     {links.map((l, idx) => (
-      <NavLink key={idx} activeStyle={{color: 'grey'}} to={`/${l.toLowerCase()}`}>
+      <NavLink key={idx} activeStyle={{color: 'grey'}} to={`/${l.toLowerCase()}/`}>
       {l}
       </NavLink>
     ))}
