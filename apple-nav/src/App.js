@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { NavWrapper, TopNav, SubNav } from './components/Navigation';
+import { subNavItems } from './scenes/Mac';
 
 const links = [
   "Mac",
@@ -18,7 +19,11 @@ class App extends Component {
       <div className="App">
         <NavWrapper>
           <TopNav links={links}/>
-          <SubNav items={[{icon: <span>ICON</span>, text: "icon", link: "icon"}]}/>
+          <SubNav
+            items={subNavItems}
+            display="dark"
+            /* items={[{icon: <span>ICON</span>, text: "icon", link: "icon"}]} */
+          />
         </NavWrapper>
         <h1>Apple</h1>
       </div>

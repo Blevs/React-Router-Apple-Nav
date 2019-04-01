@@ -24,18 +24,46 @@
     }
   }
   .subnav {
-    background: #2d2d2d;
+    background: #f6f6f6;
     padding: 15px;
-    .subnav-item {
-      transition: color 0.3s;
-      &.active {
-        color: grey;
+    &.dark {
+      background: #2d2d2d;
+      a {
+        color: #fff;
+      }
+      .subnav-items .subnav-item .subnav-icon path {
+        fill: #fff;
       }
     }
     a {
-      color: #fff;
+      color: #000;
       &:link {
         text-decoration: none;
+      }
+      &:hover {
+        color: lightblue;
+      }
+    }
+    .subnav-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      .subnav-item {
+        transition: color 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .subnav-icon {
+          path {
+            fill: #000;
+          }
+        }
+        &.active {
+          color: grey;
+        }
       }
     }
   }
