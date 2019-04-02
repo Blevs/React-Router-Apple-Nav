@@ -1,4 +1,3 @@
-import React from 'react';
 import { ReactComponent as MacBook } from './macbook.svg';
 import { ReactComponent as MacBookAir } from './macbookair.svg';
 import { ReactComponent as MacBookPro } from './macbookpro.svg';
