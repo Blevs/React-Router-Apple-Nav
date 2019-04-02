@@ -6,6 +6,10 @@ const SubNav = ({items, display}) => {
   let icons = null;
   const getScroll = (elem) => ({left: elem.scrollLeft,
                                 right: (elem.scrollLeftMax || elem.scrollWidth - elem.clientWidth)});
+  const scrollAmount = (elem) => {
+    const fit = elem.clientWidth / elem.firstChild.clientWidth;
+    return elem.firstChild.clientWidth * (fit % 1 > 0.8 ? Math.ceil(fit) : Math.floor(fit));
+  };
   const [scroll, setScroll] = useState({left: null, right: null});
   useEffect(() => {
     setScroll(getScroll(icons));
@@ -32,11 +36,11 @@ const SubNav = ({items, display}) => {
         ))}
       </div>
       <div className={"paddle-left" + (scroll.left && scroll.left !== 0 ? " visible" : "")}
-           onClick={() => icons.scrollBy({left: -icons.firstChild.clientWidth, behavior: 'smooth'})}>
+           onClick={() => icons.scrollBy({left: -scrollAmount(icons), behavior: 'smooth'})}>
         &lsaquo;
       </div>
       <div className={"paddle-right" + (scroll.right !== scroll.left ? " visible" : "")}
-           onClick={() => icons.scrollBy({left: icons.firstChild.clientWidth, behavior: 'smooth'})}>
+           onClick={() => icons.scrollBy({left: scrollAmount(icons), behavior: 'smooth'})}>
         &rsaquo;
       </div>
     </nav>
