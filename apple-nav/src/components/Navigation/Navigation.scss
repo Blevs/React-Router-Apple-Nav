@@ -1,0 +1,136 @@
+.navigation {
+  overflow: hidden;
+  background: #333333;
+  width: 100%;
+  border-top: 3px solid #fff;
+  text-align: center;
+  .topnav {
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    padding: 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    a {
+      color: #fff;
+      transition: color 0.3s;
+      &:hover {
+        color: lightgrey;
+      }
+      &:link {
+        text-decoration: none;
+      }
+    }
+  }
+  .subnav {
+    background: #f6f6f6;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    padding-right: 20px;
+    .paddle-left, .paddle-right {
+      position: absolute;
+      width: 20px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      background: inherit;
+      font-size: 2.4rem;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: #aaaaaa;
+      &.visible {
+        visibility: visible;
+        opacity: 1;
+      }
+      &::after {
+        content: "";
+        width: 1px;
+        height: 80%;
+        position: absolute;
+        top: 10%;
+        background: lightgrey;
+      }
+    }
+    .paddle-left {
+      margin-right: 20px;
+      left: 0;
+      &::after {
+        right: 0;
+      }
+    }
+    .paddle-right {
+      right: 0;
+      &::after {
+        left: 0;
+      }
+    }
+    &.dark {
+      background: #2d2d2d;
+      a {
+        color: #fff;
+      }
+      .subnav-items .subnav-item .subnav-icon path {
+        fill: #fff;
+      }
+      .paddle-left, .paddle-right {
+        color: #fff;
+      }
+    }
+    a {
+      color: #000;
+      &:link {
+        text-decoration: none;
+      }
+      &:hover {
+        color: #0070c9;
+      }
+    }
+    .subnav-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      animation: slidein 0.5s;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 40px;
+      .subnav-item {
+        transition: color 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        min-width: 100px;
+        box-sizing: border-box;
+        .subnav-icon {
+          height: 55px;
+          path {
+            fill: #000;
+          }
+        }
+        &.active {
+          color: grey;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
